@@ -40,8 +40,8 @@ export const ComponentModal = ({ component, open, onClose }: ComponentModalProps
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
-        <DialogHeader>
+      <DialogContent className="max-w-3xl max-h-[90vh] flex flex-col">
+        <DialogHeader className="flex-shrink-0">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center text-2xl shadow-glow">
               {component.icon}
@@ -58,7 +58,7 @@ export const ComponentModal = ({ component, open, onClose }: ComponentModalProps
           </div>
         </DialogHeader>
 
-        <ScrollArea className="flex-1 pr-4">
+        <ScrollArea className="flex-1 overflow-y-auto pr-4">
           <div className="space-y-6 py-4">
             {/* Description */}
             <div>
