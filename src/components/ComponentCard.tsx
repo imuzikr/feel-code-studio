@@ -119,6 +119,131 @@ export const ComponentCard = ({ component, onClick }: ComponentCardProps) => {
             </span>
           </Button>
         );
+      case 'accordion':
+        return (
+          <div className="w-full space-y-2">
+            <div className="border border-border rounded-lg">
+              <button className="w-full px-3 py-2 text-left text-sm font-medium flex justify-between items-center bg-background hover:bg-muted">
+                <span>섹션 1</span>
+                <span>▼</span>
+              </button>
+              <div className="px-3 py-2 text-xs text-muted-foreground border-t border-border">
+                펼쳐진 내용이 여기 표시됩니다.
+              </div>
+            </div>
+          </div>
+        );
+      case 'pagination':
+        return (
+          <div className="flex gap-2 items-center">
+            <Button variant="outline" size="sm">◀</Button>
+            <Button variant="default" size="sm">1</Button>
+            <Button variant="outline" size="sm">2</Button>
+            <Button variant="outline" size="sm">3</Button>
+            <Button variant="outline" size="sm">▶</Button>
+          </div>
+        );
+      case 'stepper':
+        return (
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center text-xs font-semibold">✓</div>
+              <div className="w-8 h-0.5 bg-secondary"></div>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-semibold">2</div>
+              <div className="w-8 h-0.5 bg-muted"></div>
+            </div>
+            <div className="w-8 h-8 rounded-full bg-muted text-muted-foreground flex items-center justify-center text-xs font-semibold">3</div>
+          </div>
+        );
+      case 'context-menu':
+        return (
+          <Card className="p-2 bg-background border-border w-32">
+            <div className="text-xs py-1 px-2 hover:bg-muted rounded cursor-pointer">복사</div>
+            <div className="text-xs py-1 px-2 hover:bg-muted rounded cursor-pointer">붙여넣기</div>
+            <div className="border-t border-border my-1"></div>
+            <div className="text-xs py-1 px-2 hover:bg-muted rounded cursor-pointer text-destructive">삭제</div>
+          </Card>
+        );
+      case 'drawer':
+        return (
+          <div className="relative w-full h-24 bg-background/50 border border-border rounded-lg overflow-hidden">
+            <div className="absolute left-0 top-0 h-full w-32 bg-card border-r border-border p-3 shadow-lg">
+              <div className="space-y-2">
+                <div className="h-2 bg-primary/50 rounded w-16"></div>
+                <div className="h-2 bg-muted rounded w-20"></div>
+                <div className="h-2 bg-muted rounded w-12"></div>
+              </div>
+            </div>
+          </div>
+        );
+      case 'popover':
+        return (
+          <div className="relative">
+            <Button size="sm">클릭</Button>
+            <Card className="absolute top-10 left-0 p-3 bg-background border-border shadow-lg w-40 z-10">
+              <h4 className="font-semibold text-xs mb-1">팝오버</h4>
+              <p className="text-xs text-muted-foreground">추가 정보</p>
+            </Card>
+          </div>
+        );
+      case 'toast':
+        return (
+          <Card className="p-3 bg-card border-border shadow-lg">
+            <div className="flex items-center gap-2">
+              <span className="text-sm">✓</span>
+              <p className="text-xs">저장되었습니다!</p>
+            </div>
+          </Card>
+        );
+      case 'spinner':
+        return (
+          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+        );
+      case 'skeleton':
+        return (
+          <div className="w-full space-y-2">
+            <div className="h-3 bg-muted rounded animate-pulse"></div>
+            <div className="h-3 bg-muted rounded animate-pulse"></div>
+            <div className="h-3 bg-muted rounded animate-pulse w-2/3"></div>
+          </div>
+        );
+      case 'table':
+        return (
+          <div className="w-full overflow-hidden">
+            <table className="w-full text-xs">
+              <thead className="bg-muted">
+                <tr>
+                  <th className="px-2 py-1 text-left">이름</th>
+                  <th className="px-2 py-1 text-left">상태</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t border-border">
+                  <td className="px-2 py-1">홍길동</td>
+                  <td className="px-2 py-1">활성</td>
+                </tr>
+                <tr className="border-t border-border">
+                  <td className="px-2 py-1">김철수</td>
+                  <td className="px-2 py-1">대기</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      case 'list-item':
+        return (
+          <div className="w-full space-y-2">
+            <div className="flex items-center gap-3 p-2 bg-background hover:bg-muted rounded-lg border border-border">
+              <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-xs">👤</div>
+              <div className="flex-1">
+                <h4 className="text-xs font-semibold">리스트 항목</h4>
+                <p className="text-xs text-muted-foreground">설명 텍스트</p>
+              </div>
+            </div>
+          </div>
+        );
       default:
         return <div className="text-sm text-muted-foreground">미리보기</div>;
     }
