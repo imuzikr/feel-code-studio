@@ -17,6 +17,148 @@ export const componentsData: ComponentData[] = [
     useCase: '로그인 버튼, 제출 버튼, 삭제 버튼 등 사용자 액션이 필요한 모든 곳에서 사용'
   },
   {
+    id: 'checkbox',
+    name: '체크박스',
+    englishName: 'Checkbox',
+    description: '여러 항목을 선택할 수 있는 입력 요소',
+    category: 'input',
+    difficulty: 'beginner',
+    tags: ['선택', '다중선택', '폼'],
+    icon: '☑️',
+    explanation: '체크박스는 사용자가 여러 옵션 중 하나 이상을 선택할 수 있게 하는 기본 입력 요소입니다. 독립적으로 선택/해제할 수 있습니다.',
+    codeExample: `<label class="checkbox-label">
+  <input type="checkbox" id="agree" />
+  <span>이용약관에 동의합니다</span>
+</label>
+
+<div class="checkbox-group">
+  <label>
+    <input type="checkbox" name="interests" value="music" />
+    음악
+  </label>
+  <label>
+    <input type="checkbox" name="interests" value="sports" />
+    스포츠
+  </label>
+</div>`,
+    useCase: '약관 동의, 다중 선택 설문, 필터 옵션, 할 일 목록 등에 사용'
+  },
+  {
+    id: 'radio',
+    name: '라디오 버튼',
+    englishName: 'Radio Button',
+    description: '여러 옵션 중 하나만 선택하는 입력 요소',
+    category: 'input',
+    difficulty: 'beginner',
+    tags: ['선택', '단일선택', '폼'],
+    icon: '🔘',
+    explanation: '라디오 버튼은 여러 옵션 중 하나만 선택할 수 있는 입력 요소입니다. 같은 그룹 내에서는 하나만 선택됩니다.',
+    codeExample: `<div class="radio-group">
+  <label>
+    <input type="radio" name="plan" value="basic" />
+    <span>베이직 플랜</span>
+  </label>
+  <label>
+    <input type="radio" name="plan" value="pro" checked />
+    <span>프로 플랜</span>
+  </label>
+  <label>
+    <input type="radio" name="plan" value="enterprise" />
+    <span>엔터프라이즈 플랜</span>
+  </label>
+</div>`,
+    useCase: '결제 방법 선택, 배송 옵션 선택, 설문조사 답변 등에 사용'
+  },
+  {
+    id: 'toggle',
+    name: '토글/스위치',
+    englishName: 'Toggle/Switch',
+    description: 'ON/OFF 상태를 전환하는 스위치',
+    category: 'input',
+    difficulty: 'beginner',
+    tags: ['토글', '스위치', '상태'],
+    icon: '🔄',
+    explanation: '토글 스위치는 두 가지 상태(ON/OFF) 간 전환을 직관적으로 표현하는 컴포넌트입니다. 즉시 효과가 적용됩니다.',
+    codeExample: `<label class="toggle-switch">
+  <input type="checkbox" />
+  <span class="slider"></span>
+</label>
+
+<style>
+  .toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: 0.3s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(26px);
+  }
+</style>`,
+    useCase: '알림 설정, 다크모드 전환, 기능 활성화/비활성화 등에 사용'
+  },
+  {
+    id: 'search',
+    name: '검색창',
+    englishName: 'Search Bar',
+    description: '검색어를 입력하는 입력 필드',
+    category: 'input',
+    difficulty: 'beginner',
+    tags: ['검색', '입력', '필터'],
+    icon: '🔍',
+    explanation: '검색창은 사용자가 검색어를 입력하여 콘텐츠를 찾을 수 있게 하는 특수한 입력 필드입니다. 보통 돋보기 아이콘이 포함됩니다.',
+    codeExample: `<div class="search-bar">
+  <span class="search-icon">🔍</span>
+  <input 
+    type="search" 
+    placeholder="검색어를 입력하세요..."
+    class="search-input"
+  />
+  <button class="clear-button">×</button>
+</div>
+
+<style>
+  .search-bar {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    background: white;
+  }
+  
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    margin: 0 8px;
+  }
+</style>`,
+    useCase: '웹사이트 검색, 상품 검색, 데이터 필터링, 자동완성 등에 사용'
+  },
+  {
     id: 'input',
     name: '입력 필드',
     englishName: 'Input Field',
@@ -1173,5 +1315,569 @@ export const componentsData: ComponentData[] = [
   });
 </script>`,
     useCase: '모바일 네비게이션, 반응형 웹사이트, 사이드바 토글 등에 사용'
+  },
+  {
+    id: 'breadcrumb',
+    name: '브레드크럼',
+    englishName: 'Breadcrumb',
+    description: '현재 페이지 위치를 보여주는 네비게이션',
+    category: 'navigation',
+    difficulty: 'beginner',
+    tags: ['네비게이션', '경로', '위치'],
+    icon: '🍞',
+    explanation: '브레드크럼은 사용자가 현재 웹사이트 내 어디에 있는지 계층 구조로 보여주고, 상위 페이지로 쉽게 이동할 수 있게 합니다.',
+    codeExample: `<nav class="breadcrumb">
+  <a href="/">홈</a>
+  <span class="separator">›</span>
+  <a href="/products">상품</a>
+  <span class="separator">›</span>
+  <span class="current">노트북</span>
+</nav>
+
+<style>
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+  
+  .breadcrumb a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  
+  .separator {
+    color: #999;
+  }
+  
+  .current {
+    color: #333;
+    font-weight: 500;
+  }
+</style>`,
+    useCase: '전자상거래 사이트, 문서 사이트, 계층적 콘텐츠 네비게이션 등에 사용'
+  },
+  {
+    id: 'rating',
+    name: '평점/별점',
+    englishName: 'Rating',
+    description: '별점 또는 평점을 표시하거나 입력받는 컴포넌트',
+    category: 'input',
+    difficulty: 'intermediate',
+    tags: ['평점', '별점', '리뷰'],
+    icon: '⭐',
+    explanation: '평점 컴포넌트는 제품이나 서비스의 품질을 별점으로 표시하거나, 사용자가 평가를 입력할 수 있게 합니다.',
+    codeExample: `<div class="rating">
+  <input type="radio" id="star5" name="rating" value="5" />
+  <label for="star5">★</label>
+  <input type="radio" id="star4" name="rating" value="4" />
+  <label for="star4">★</label>
+  <input type="radio" id="star3" name="rating" value="3" />
+  <label for="star3">★</label>
+  <input type="radio" id="star2" name="rating" value="2" />
+  <label for="star2">★</label>
+  <input type="radio" id="star1" name="rating" value="1" />
+  <label for="star1">★</label>
+</div>
+
+<style>
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  
+  .rating input {
+    display: none;
+  }
+  
+  .rating label {
+    font-size: 24px;
+    color: #ddd;
+    cursor: pointer;
+  }
+  
+  .rating label:hover,
+  .rating label:hover ~ label,
+  .rating input:checked ~ label {
+    color: #ffc107;
+  }
+</style>`,
+    useCase: '리뷰 시스템, 상품 평가, 만족도 조사, 콘텐츠 등급 표시 등에 사용'
+  },
+  {
+    id: 'empty-state',
+    name: '빈 상태',
+    englishName: 'Empty State',
+    description: '데이터가 없을 때 표시하는 화면',
+    category: 'feedback',
+    difficulty: 'beginner',
+    tags: ['빈 상태', '데이터 없음', '안내'],
+    icon: '📭',
+    explanation: '빈 상태는 데이터나 콘텐츠가 없을 때 사용자에게 상황을 설명하고, 다음 행동을 안내하는 화면입니다.',
+    codeExample: `<div class="empty-state">
+  <div class="empty-icon">📭</div>
+  <h3>데이터가 없습니다</h3>
+  <p>아직 항목이 추가되지 않았습니다.</p>
+  <button class="primary-button">
+    첫 항목 추가하기
+  </button>
+</div>
+
+<style>
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .empty-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+  }
+  
+  .empty-state h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .empty-state p {
+    color: #666;
+    margin-bottom: 24px;
+  }
+</style>`,
+    useCase: '빈 검색 결과, 빈 장바구니, 빈 메시지함, 빈 대시보드 등에 사용'
+  },
+  {
+    id: 'timeline',
+    name: '타임라인',
+    englishName: 'Timeline',
+    description: '시간 순서대로 이벤트를 표시하는 컴포넌트',
+    category: 'display',
+    difficulty: 'intermediate',
+    tags: ['시간', '이벤트', '히스토리'],
+    icon: '📅',
+    explanation: '타임라인은 이벤트나 활동을 시간 순서대로 시각적으로 표현하여 진행 과정이나 히스토리를 보여줍니다.',
+    codeExample: `<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h4>주문 완료</h4>
+      <p class="timeline-time">2024-01-15 14:30</p>
+      <p>주문이 접수되었습니다.</p>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h4>배송 시작</h4>
+      <p class="timeline-time">2024-01-16 09:00</p>
+      <p>상품이 배송되었습니다.</p>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker active"></div>
+    <div class="timeline-content">
+      <h4>배송 중</h4>
+      <p class="timeline-time">2024-01-17 11:20</p>
+      <p>배송 중입니다.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ddd;
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    left: 10px;
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    border-radius: 50%;
+  }
+  
+  .timeline-marker.active {
+    background: #0066cc;
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.2);
+  }
+</style>`,
+    useCase: '주문 추적, 프로젝트 진행 상황, 히스토리 표시, 활동 로그 등에 사용'
+  },
+  {
+    id: 'chat-bubble',
+    name: '메시지 버블',
+    englishName: 'Chat Bubble/Message',
+    description: '채팅이나 메시지를 표시하는 말풍선',
+    category: 'display',
+    difficulty: 'beginner',
+    tags: ['채팅', '메시지', '댓글'],
+    icon: '💬',
+    explanation: '메시지 버블은 채팅, 댓글, 메시지를 말풍선 형태로 표시하는 컴포넌트입니다. 발신자에 따라 다른 스타일을 적용합니다.',
+    codeExample: `<div class="chat-container">
+  <!-- 상대방 메시지 -->
+  <div class="message-bubble received">
+    <div class="message-avatar">👤</div>
+    <div class="message-content">
+      <div class="message-author">김철수</div>
+      <div class="message-text">안녕하세요!</div>
+      <div class="message-time">오후 2:30</div>
+    </div>
+  </div>
+  
+  <!-- 내 메시지 -->
+  <div class="message-bubble sent">
+    <div class="message-content">
+      <div class="message-text">안녕하세요. 반갑습니다!</div>
+      <div class="message-time">오후 2:31</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .message-bubble {
+    display: flex;
+    margin: 12px 0;
+  }
+  
+  .message-bubble.sent {
+    justify-content: flex-end;
+  }
+  
+  .message-bubble.sent .message-content {
+    background: #0066cc;
+    color: white;
+    border-radius: 18px 18px 4px 18px;
+  }
+  
+  .message-bubble.received .message-content {
+    background: #f0f0f0;
+    border-radius: 18px 18px 18px 4px;
+  }
+</style>`,
+    useCase: '채팅 앱, 메시징 시스템, 댓글 시스템, 고객 지원 채팅 등에 사용'
+  },
+  {
+    id: 'autocomplete',
+    name: '자동완성',
+    englishName: 'Autocomplete',
+    description: '입력 시 자동으로 추천 목록을 보여주는 입력 필드',
+    category: 'input',
+    difficulty: 'intermediate',
+    tags: ['자동완성', '검색', '추천'],
+    icon: '🔮',
+    explanation: '자동완성은 사용자가 입력하는 동안 관련된 제안을 실시간으로 표시하여 빠르고 정확한 입력을 돕습니다.',
+    codeExample: `<div class="autocomplete-container">
+  <input 
+    type="text" 
+    placeholder="검색..."
+    class="autocomplete-input"
+    id="autocomplete"
+  />
+  <ul class="autocomplete-suggestions" id="suggestions">
+    <li class="suggestion-item">서울특별시</li>
+    <li class="suggestion-item">서울역</li>
+    <li class="suggestion-item">서울대학교</li>
+  </ul>
+</div>
+
+<script>
+  const input = document.getElementById('autocomplete');
+  const suggestions = document.getElementById('suggestions');
+  
+  input.addEventListener('input', async (e) => {
+    const value = e.target.value;
+    if (value.length < 2) {
+      suggestions.style.display = 'none';
+      return;
+    }
+    
+    // API 호출 또는 로컬 필터링
+    const results = await fetchSuggestions(value);
+    
+    suggestions.innerHTML = results
+      .map(item => \`<li class="suggestion-item">\${item}</li>\`)
+      .join('');
+    suggestions.style.display = 'block';
+  });
+</script>
+
+<style>
+  .autocomplete-container {
+    position: relative;
+  }
+  
+  .autocomplete-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none;
+  }
+  
+  .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestion-item:hover {
+    background: #f0f0f0;
+  }
+</style>`,
+    useCase: '검색창, 주소 입력, 태그 입력, 사용자 멘션 등에 사용'
+  },
+  {
+    id: 'tag-input',
+    name: '태그 입력',
+    englishName: 'Tag Input',
+    description: '태그를 추가하고 삭제할 수 있는 입력 필드',
+    category: 'input',
+    difficulty: 'intermediate',
+    tags: ['태그', '입력', '다중입력'],
+    icon: '🏷️',
+    explanation: '태그 입력은 사용자가 여러 개의 태그를 입력하고 관리할 수 있는 컴포넌트입니다. 각 태그를 개별적으로 추가/삭제할 수 있습니다.',
+    codeExample: `<div class="tag-input-container">
+  <div class="tags">
+    <span class="tag">
+      React
+      <button class="tag-remove">×</button>
+    </span>
+    <span class="tag">
+      TypeScript
+      <button class="tag-remove">×</button>
+    </span>
+  </div>
+  <input 
+    type="text" 
+    class="tag-input" 
+    placeholder="태그 추가..."
+  />
+</div>
+
+<script>
+  const input = document.querySelector('.tag-input');
+  const tagsContainer = document.querySelector('.tags');
+  
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && input.value.trim()) {
+      const tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.innerHTML = \`
+        \${input.value}
+        <button class="tag-remove">×</button>
+      \`;
+      
+      tag.querySelector('.tag-remove').addEventListener('click', () => {
+        tag.remove();
+      });
+      
+      tagsContainer.appendChild(tag);
+      input.value = '';
+    }
+  });
+</script>
+
+<style>
+  .tag-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    background: #e0e0e0;
+    border-radius: 16px;
+    font-size: 14px;
+  }
+  
+  .tag-remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+  .tag-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    min-width: 120px;
+  }
+</style>`,
+    useCase: '블로그 태그, 키워드 입력, 받는사람 입력, 관심사 선택 등에 사용'
+  },
+  {
+    id: 'back-to-top',
+    name: '맨 위로 버튼',
+    englishName: 'Back to Top Button',
+    description: '페이지 최상단으로 스크롤하는 버튼',
+    category: 'navigation',
+    difficulty: 'beginner',
+    tags: ['스크롤', '네비게이션', '버튼'],
+    icon: '⬆️',
+    explanation: '맨 위로 버튼은 긴 페이지에서 빠르게 최상단으로 이동할 수 있게 하는 버튼입니다. 스크롤 시 나타납니다.',
+    codeExample: `<button id="backToTop" class="back-to-top">
+  ⬆
+</button>
+
+<script>
+  const backToTopBtn = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
+  
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+<style>
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .back-to-top:hover {
+    background: #0052a3;
+    transform: translateY(-4px);
+  }
+</style>`,
+    useCase: '긴 페이지, 블로그 포스트, 문서 페이지, 상품 목록 등에 사용'
+  },
+  {
+    id: 'lightbox',
+    name: '이미지 라이트박스',
+    englishName: 'Image Lightbox',
+    description: '이미지를 전체 화면으로 확대해서 보는 컴포넌트',
+    category: 'display',
+    difficulty: 'intermediate',
+    tags: ['이미지', '갤러리', '확대'],
+    icon: '🖼️',
+    explanation: '라이트박스는 이미지를 클릭하면 전체 화면 오버레이로 크게 보여주는 컴포넌트입니다. 갤러리 탐색 기능도 포함합니다.',
+    codeExample: `<div class="gallery">
+  <img src="image1.jpg" class="thumbnail" alt="이미지 1" />
+  <img src="image2.jpg" class="thumbnail" alt="이미지 2" />
+  <img src="image3.jpg" class="thumbnail" alt="이미지 3" />
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="close-btn">×</button>
+  <button class="prev-btn">‹</button>
+  <img src="" alt="" class="lightbox-image" />
+  <button class="next-btn">›</button>
+</div>
+
+<script>
+  const thumbnails = document.querySelectorAll('.thumbnail');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.querySelector('.lightbox-image');
+  let currentIndex = 0;
+  
+  thumbnails.forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+      currentIndex = index;
+      lightboxImage.src = thumb.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+  
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
+
+<style>
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+</style>`,
+    useCase: '이미지 갤러리, 포트폴리오, 상품 상세 이미지, 사진 앨범 등에 사용'
   }
 ];

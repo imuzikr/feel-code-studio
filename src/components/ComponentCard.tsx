@@ -46,6 +46,50 @@ export const ComponentCard = ({ component, onClick }: ComponentCardProps) => {
             <Button variant="secondary">보조 버튼</Button>
           </div>
         );
+      case 'checkbox':
+        return (
+          <div className="space-y-2">
+            <label className="flex items-center gap-2 text-xs cursor-pointer">
+              <input type="checkbox" checked className="w-4 h-4" />
+              <span>옵션 1</span>
+            </label>
+            <label className="flex items-center gap-2 text-xs cursor-pointer">
+              <input type="checkbox" className="w-4 h-4" />
+              <span>옵션 2</span>
+            </label>
+          </div>
+        );
+      case 'radio':
+        return (
+          <div className="space-y-2">
+            <label className="flex items-center gap-2 text-xs cursor-pointer">
+              <input type="radio" name="demo" checked className="w-4 h-4" />
+              <span>선택 1</span>
+            </label>
+            <label className="flex items-center gap-2 text-xs cursor-pointer">
+              <input type="radio" name="demo" className="w-4 h-4" />
+              <span>선택 2</span>
+            </label>
+          </div>
+        );
+      case 'toggle':
+        return (
+          <div className="flex items-center gap-3">
+            <div className="relative w-11 h-6 bg-muted rounded-full cursor-pointer">
+              <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform"></div>
+            </div>
+            <div className="relative w-11 h-6 bg-primary rounded-full cursor-pointer">
+              <div className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform"></div>
+            </div>
+          </div>
+        );
+      case 'search':
+        return (
+          <div className="w-full flex items-center gap-2 px-3 py-2 bg-background border border-border rounded-full">
+            <span className="text-muted-foreground">🔍</span>
+            <Input placeholder="검색..." className="border-0 p-0 h-auto focus-visible:ring-0 text-xs" />
+          </div>
+        );
       case 'input':
         return <Input placeholder="텍스트를 입력하세요..." />;
       case 'card':
@@ -546,6 +590,103 @@ export const ComponentCard = ({ component, onClick }: ComponentCardProps) => {
               <div className="hover:bg-muted px-2 py-1 rounded">홈</div>
               <div className="hover:bg-muted px-2 py-1 rounded">메뉴</div>
             </div>
+          </div>
+        );
+      case 'breadcrumb':
+        return (
+          <div className="flex items-center gap-2 text-xs">
+            <span className="text-primary">홈</span>
+            <span className="text-muted-foreground">›</span>
+            <span className="text-primary">상품</span>
+            <span className="text-muted-foreground">›</span>
+            <span className="text-foreground font-medium">노트북</span>
+          </div>
+        );
+      case 'rating':
+        return (
+          <div className="flex gap-1">
+            <span className="text-amber-400 text-xl">★</span>
+            <span className="text-amber-400 text-xl">★</span>
+            <span className="text-amber-400 text-xl">★</span>
+            <span className="text-amber-400 text-xl">★</span>
+            <span className="text-muted text-xl">★</span>
+          </div>
+        );
+      case 'empty-state':
+        return (
+          <div className="w-full text-center py-4">
+            <div className="text-3xl mb-2">📭</div>
+            <p className="text-xs font-semibold mb-1">데이터가 없습니다</p>
+            <p className="text-xs text-muted-foreground">항목을 추가해보세요</p>
+          </div>
+        );
+      case 'timeline':
+        return (
+          <div className="relative pl-6 py-2 space-y-3">
+            <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-border"></div>
+            <div className="relative">
+              <div className="absolute -left-5 w-3 h-3 rounded-full bg-muted"></div>
+              <p className="text-xs font-medium">주문 완료</p>
+              <p className="text-xs text-muted-foreground">2024-01-15</p>
+            </div>
+            <div className="relative">
+              <div className="absolute -left-5 w-3 h-3 rounded-full bg-primary ring-2 ring-primary/20"></div>
+              <p className="text-xs font-medium">배송 중</p>
+              <p className="text-xs text-muted-foreground">2024-01-17</p>
+            </div>
+          </div>
+        );
+      case 'chat-bubble':
+        return (
+          <div className="w-full space-y-2">
+            <div className="flex gap-2">
+              <div className="w-6 h-6 rounded-full bg-muted flex items-center justify-center text-xs">👤</div>
+              <div className="bg-muted px-3 py-2 rounded-lg rounded-tl-none text-xs max-w-[60%]">
+                안녕하세요!
+              </div>
+            </div>
+            <div className="flex justify-end">
+              <div className="bg-primary text-primary-foreground px-3 py-2 rounded-lg rounded-tr-none text-xs max-w-[60%]">
+                반갑습니다
+              </div>
+            </div>
+          </div>
+        );
+      case 'autocomplete':
+        return (
+          <div className="w-full relative">
+            <Input placeholder="검색..." className="text-xs" />
+            <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-md shadow-lg text-xs">
+              <div className="px-3 py-2 hover:bg-muted cursor-pointer">서울특별시</div>
+              <div className="px-3 py-2 hover:bg-muted cursor-pointer">서울역</div>
+            </div>
+          </div>
+        );
+      case 'tag-input':
+        return (
+          <div className="w-full flex flex-wrap gap-2 p-2 border border-border rounded-lg">
+            <Badge>React</Badge>
+            <Badge variant="secondary">TypeScript</Badge>
+            <Input placeholder="태그 추가..." className="flex-1 border-0 p-0 h-6 text-xs focus-visible:ring-0" />
+          </div>
+        );
+      case 'back-to-top':
+        return (
+          <div className="relative w-full h-20 bg-background/50">
+            <div className="absolute bottom-2 right-2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground shadow-lg cursor-pointer hover:scale-110 transition-transform">
+              <span className="text-xl">⬆</span>
+            </div>
+          </div>
+        );
+      case 'lightbox':
+        return (
+          <div className="w-full space-y-2">
+            <div className="grid grid-cols-3 gap-1">
+              <div className="aspect-square bg-muted rounded cursor-pointer"></div>
+              <div className="aspect-square bg-muted rounded cursor-pointer"></div>
+              <div className="aspect-square bg-muted rounded cursor-pointer"></div>
+            </div>
+            <p className="text-xs text-center text-muted-foreground">이미지 클릭으로 확대</p>
           </div>
         );
       default:
