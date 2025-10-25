@@ -244,6 +244,268 @@ export const ComponentCard = ({ component, onClick }: ComponentCardProps) => {
             </div>
           </div>
         );
+      case 'bottom-nav':
+        return (
+          <div className="w-full bg-card border border-border rounded-lg p-3">
+            <div className="flex justify-around items-center gap-2">
+              <div className="flex flex-col items-center gap-1">
+                <div className="w-6 h-6 flex items-center justify-center text-primary">🏠</div>
+                <span className="text-xs text-primary font-medium">홈</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="w-6 h-6 flex items-center justify-center text-muted-foreground">🔍</div>
+                <span className="text-xs text-muted-foreground">검색</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <div className="w-6 h-6 flex items-center justify-center text-muted-foreground">👤</div>
+                <span className="text-xs text-muted-foreground">프로필</span>
+              </div>
+            </div>
+          </div>
+        );
+      case 'chart':
+        return (
+          <div className="w-full space-y-2">
+            <div className="flex items-end justify-around h-20 gap-2">
+              <div className="w-8 bg-secondary rounded-t" style={{height: '40%'}}></div>
+              <div className="w-8 bg-primary rounded-t" style={{height: '70%'}}></div>
+              <div className="w-8 bg-secondary rounded-t" style={{height: '55%'}}></div>
+              <div className="w-8 bg-accent/70 rounded-t" style={{height: '85%'}}></div>
+            </div>
+            <div className="flex justify-around text-xs text-muted-foreground">
+              <span>Q1</span>
+              <span>Q2</span>
+              <span>Q3</span>
+              <span>Q4</span>
+            </div>
+          </div>
+        );
+      case 'multi-select':
+        return (
+          <div className="w-full space-y-2">
+            <div className="flex flex-wrap gap-2 p-2 bg-background border border-border rounded-lg">
+              <Badge variant="secondary" className="text-xs">항목 1</Badge>
+              <Badge variant="secondary" className="text-xs">항목 2</Badge>
+            </div>
+            <select className="w-full px-3 py-2 bg-background border border-border rounded-md text-xs">
+              <option>✓ 항목 1</option>
+              <option>✓ 항목 2</option>
+              <option>항목 3</option>
+            </select>
+          </div>
+        );
+      case 'file-upload':
+        return (
+          <div className="w-full">
+            <div className="border-2 border-dashed border-border rounded-lg p-4 text-center bg-background/50 hover:bg-muted transition-colors">
+              <div className="text-2xl mb-1">📎</div>
+              <p className="text-xs text-muted-foreground">파일 업로드</p>
+            </div>
+          </div>
+        );
+      case 'fab':
+        return (
+          <div className="relative w-full h-20">
+            <div className="absolute bottom-2 right-2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground shadow-glow cursor-pointer hover:scale-110 transition-transform">
+              <span className="text-xl">+</span>
+            </div>
+          </div>
+        );
+      case 'bottom-sheet':
+        return (
+          <div className="relative w-full h-24 bg-background/30 border border-border rounded-lg overflow-hidden">
+            <div className="absolute bottom-0 left-0 right-0 bg-card border-t-2 border-border rounded-t-xl p-3 shadow-lg">
+              <div className="w-10 h-1 bg-muted rounded-full mx-auto mb-2"></div>
+              <div className="space-y-1">
+                <div className="h-2 bg-primary/50 rounded w-16"></div>
+                <div className="h-2 bg-muted rounded w-20"></div>
+              </div>
+            </div>
+          </div>
+        );
+      case 'drag-drop':
+        return (
+          <div className="w-full space-y-2">
+            <div className="flex items-center gap-2 p-2 bg-background border border-border rounded-lg hover:bg-muted">
+              <span className="text-muted-foreground">☰</span>
+              <span className="text-xs">항목 1</span>
+            </div>
+            <div className="flex items-center gap-2 p-2 bg-background border border-border rounded-lg hover:bg-muted">
+              <span className="text-muted-foreground">☰</span>
+              <span className="text-xs">항목 2</span>
+            </div>
+            <div className="flex items-center gap-2 p-2 bg-background border border-border rounded-lg hover:bg-muted">
+              <span className="text-muted-foreground">☰</span>
+              <span className="text-xs">항목 3</span>
+            </div>
+          </div>
+        );
+      case 'grid':
+        return (
+          <div className="grid grid-cols-3 gap-2 w-full">
+            <div className="aspect-square bg-muted rounded"></div>
+            <div className="aspect-square bg-muted rounded"></div>
+            <div className="aspect-square bg-muted rounded"></div>
+            <div className="aspect-square bg-muted rounded"></div>
+            <div className="aspect-square bg-muted rounded"></div>
+            <div className="aspect-square bg-muted rounded"></div>
+          </div>
+        );
+      case 'carousel':
+        return (
+          <div className="w-full flex items-center gap-2">
+            <button className="text-muted-foreground">◀</button>
+            <div className="flex-1 border-2 border-primary rounded-lg h-20 bg-primary/10 flex items-center justify-center">
+              <span className="text-xs">슬라이드 1</span>
+            </div>
+            <button className="text-muted-foreground">▶</button>
+          </div>
+        );
+      case 'divider':
+        return (
+          <div className="w-full space-y-3">
+            <div className="text-xs text-muted-foreground">섹션 1</div>
+            <div className="border-t border-border"></div>
+            <div className="text-xs text-muted-foreground">섹션 2</div>
+          </div>
+        );
+      case 'avatar':
+        return (
+          <div className="flex gap-2 items-center">
+            <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center text-white relative">
+              <span className="text-sm">👤</span>
+              <span className="absolute bottom-0 right-0 w-3 h-3 bg-secondary rounded-full border-2 border-card"></span>
+            </div>
+            <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-xs font-semibold">
+              홍길
+            </div>
+          </div>
+        );
+      case 'chip':
+        return (
+          <div className="flex flex-wrap gap-2">
+            <Badge className="cursor-pointer">#개발</Badge>
+            <Badge variant="secondary" className="cursor-pointer">#디자인</Badge>
+            <Badge variant="outline" className="cursor-pointer">
+              #마케팅 <span className="ml-1">×</span>
+            </Badge>
+          </div>
+        );
+      case 'infinite-scroll':
+        return (
+          <div className="w-full h-24 border border-border rounded-lg overflow-hidden relative">
+            <div className="space-y-2 p-2">
+              <div className="h-4 bg-muted rounded"></div>
+              <div className="h-4 bg-muted rounded"></div>
+              <div className="h-4 bg-muted rounded"></div>
+            </div>
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2">
+              <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          </div>
+        );
+      case 'pull-refresh':
+        return (
+          <div className="w-full border border-border rounded-lg p-4 relative">
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 text-primary">
+              <span className="text-lg">⟳</span>
+            </div>
+            <div className="mt-4 space-y-2">
+              <div className="h-3 bg-muted rounded"></div>
+              <div className="h-3 bg-muted rounded w-3/4"></div>
+            </div>
+          </div>
+        );
+      case 'sticky-header':
+        return (
+          <div className="w-full h-24 border border-border rounded-lg overflow-hidden relative">
+            <div className="absolute top-0 left-0 right-0 bg-card border-b border-border p-2 z-10 shadow-sm">
+              <div className="flex gap-3 text-xs">
+                <span className="text-primary font-medium">홈</span>
+                <span className="text-muted-foreground">서비스</span>
+                <span className="text-muted-foreground">문의</span>
+              </div>
+            </div>
+            <div className="pt-10 p-2 space-y-2">
+              <div className="h-3 bg-muted rounded"></div>
+              <div className="h-3 bg-muted rounded"></div>
+            </div>
+          </div>
+        );
+      case 'focus-states':
+        return (
+          <div className="flex gap-2">
+            <Button size="sm" variant="outline" className="text-xs">기본</Button>
+            <Button size="sm" className="text-xs ring-2 ring-primary ring-offset-2">포커스</Button>
+            <Button size="sm" variant="outline" className="text-xs bg-muted">호버</Button>
+          </div>
+        );
+      case 'disabled-state':
+        return (
+          <div className="space-y-2">
+            <Button size="sm" variant="outline" className="text-xs opacity-50 cursor-not-allowed">비활성 버튼</Button>
+            <Input placeholder="비활성 입력" disabled className="text-xs" />
+          </div>
+        );
+      case 'label':
+        return (
+          <div className="w-full space-y-1">
+            <label className="text-xs font-medium">이메일</label>
+            <Input type="email" placeholder="example@email.com" className="text-xs" />
+          </div>
+        );
+      case 'placeholder':
+        return (
+          <div className="w-full">
+            <Input placeholder="example@email.com" className="text-xs" />
+          </div>
+        );
+      case 'helper-text':
+        return (
+          <div className="w-full space-y-1">
+            <label className="text-xs font-medium">비밀번호</label>
+            <Input type="password" className="text-xs" />
+            <p className="text-xs text-muted-foreground">최소 8자 이상, 숫자 포함</p>
+          </div>
+        );
+      case 'validation':
+        return (
+          <div className="w-full space-y-2">
+            <Input placeholder="test" className="text-xs border-destructive" />
+            <p className="text-xs text-destructive">올바른 이메일 형식이 아닙니다</p>
+          </div>
+        );
+      case 'error-success-message':
+        return (
+          <div className="w-full space-y-2">
+            <div className="bg-destructive/10 border border-destructive/20 rounded px-3 py-2 text-xs text-destructive">
+              ❌ 오류 메시지
+            </div>
+            <div className="bg-secondary/10 border border-secondary/20 rounded px-3 py-2 text-xs text-secondary">
+              ✓ 성공 메시지
+            </div>
+          </div>
+        );
+      case 'input-mask':
+        return (
+          <div className="w-full">
+            <Input placeholder="010-1234-5678" className="text-xs font-mono" />
+          </div>
+        );
+      case 'hamburger-menu':
+        return (
+          <div className="relative w-full h-20">
+            <div className="absolute top-2 right-2 w-8 h-8 flex flex-col justify-center items-center gap-1 cursor-pointer">
+              <div className="w-5 h-0.5 bg-foreground rounded"></div>
+              <div className="w-5 h-0.5 bg-foreground rounded"></div>
+              <div className="w-5 h-0.5 bg-foreground rounded"></div>
+            </div>
+            <div className="absolute top-12 right-2 bg-card border border-border rounded-lg p-2 shadow-lg text-xs space-y-1">
+              <div className="hover:bg-muted px-2 py-1 rounded">홈</div>
+              <div className="hover:bg-muted px-2 py-1 rounded">메뉴</div>
+            </div>
+          </div>
+        );
       default:
         return <div className="text-sm text-muted-foreground">미리보기</div>;
     }
