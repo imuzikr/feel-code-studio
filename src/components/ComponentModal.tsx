@@ -84,7 +84,7 @@ export const ComponentModal = ({ component, open, onClose }: ComponentModalProps
             {/* Code Example */}
             <div>
               <h4 className="text-sm font-semibold text-primary mb-2">💻 코드 예시</h4>
-              <div className="bg-muted/30 border border-border rounded-lg p-4 overflow-x-auto">
+              <div className="bg-muted/30 border border-border rounded-lg p-4 max-h-96 overflow-auto">
                 <pre className="text-sm font-mono text-foreground">
                   <code>{component.codeExample}</code>
                 </pre>
