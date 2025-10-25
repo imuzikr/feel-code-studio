@@ -361,6 +361,48 @@ export const ComponentCard = ({ component, onClick }: ComponentCardProps) => {
             <button className="text-muted-foreground">▶</button>
           </div>
         );
+      case 'motion-design':
+        return (
+          <div className="w-full flex gap-2 items-center justify-center">
+            <div className="w-12 h-12 bg-primary rounded-lg animate-float"></div>
+            <div className="w-12 h-12 bg-secondary rounded-lg animate-pulse"></div>
+            <div className="w-12 h-12 bg-accent rounded-lg animate-bounce"></div>
+          </div>
+        );
+      case 'microinteraction':
+        return (
+          <div className="w-full flex gap-3 items-center justify-center">
+            <button className="text-2xl hover:scale-125 transition-transform">♡</button>
+            <button className="w-10 h-10 rounded-full bg-primary/20 hover:bg-primary hover:scale-110 transition-all"></button>
+            <button className="px-3 py-1 bg-muted rounded hover:shadow-glow transition-all text-xs">클릭</button>
+          </div>
+        );
+      case 'responsive-layout':
+        return (
+          <div className="w-full space-y-2">
+            <div className="flex gap-2">
+              <div className="flex-1 h-8 bg-muted rounded"></div>
+              <div className="flex-1 h-8 bg-muted rounded"></div>
+            </div>
+            <div className="flex gap-2">
+              <div className="w-1/3 h-8 bg-muted rounded"></div>
+              <div className="flex-1 h-8 bg-muted rounded"></div>
+            </div>
+          </div>
+        );
+      case 'gesture-ui':
+        return (
+          <div className="relative w-full h-20 flex items-center justify-center">
+            <div className="relative">
+              <div className="text-3xl">👆</div>
+              <div className="absolute -top-2 -right-2">
+                <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        );
       case 'divider':
         return (
           <div className="w-full space-y-3">

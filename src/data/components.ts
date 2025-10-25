@@ -602,6 +602,198 @@ export const componentsData: ComponentData[] = [
     useCase: '이미지 갤러리, 상품 목록, 대시보드 위젯, 카드 레이아웃 등에 사용'
   },
   {
+    id: 'carousel',
+    name: '캐러셀/슬라이드',
+    englishName: 'Carousel/Slider',
+    description: '여러 콘텐츠를 좌우로 넘기며 볼 수 있는 슬라이드',
+    category: 'display',
+    difficulty: 'intermediate',
+    tags: ['슬라이드', '이미지', '갤러리'],
+    icon: '🎠',
+    explanation: '캐러셀은 여러 개의 콘텐츠를 좌우로 슬라이드하며 탐색할 수 있는 컴포넌트입니다. 이미지 갤러리나 프로모션 배너에 자주 사용됩니다.',
+    codeExample: `<div class="carousel">
+  <button class="prev">◀</button>
+  <div class="carousel-track">
+    <div class="slide active">
+      <img src="image1.jpg" alt="슬라이드 1" />
+    </div>
+    <div class="slide">
+      <img src="image2.jpg" alt="슬라이드 2" />
+    </div>
+    <div class="slide">
+      <img src="image3.jpg" alt="슬라이드 3" />
+    </div>
+  </div>
+  <button class="next">▶</button>
+  <div class="indicators">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>`,
+    useCase: '이미지 갤러리, 프로모션 배너, 제품 사진, 튜토리얼 슬라이드 등에 사용'
+  },
+  {
+    id: 'motion-design',
+    name: '모션 디자인',
+    englishName: 'Motion Design',
+    description: '애니메이션과 전환 효과를 통한 시각적 피드백',
+    category: 'feedback',
+    difficulty: 'intermediate',
+    tags: ['애니메이션', '전환', '효과'],
+    icon: '✨',
+    explanation: '모션 디자인은 UI 요소에 애니메이션과 전환 효과를 적용하여 더 생동감 있고 직관적인 사용자 경험을 제공합니다.',
+    codeExample: `<div class="animated-element">
+  클릭하세요
+</div>
+
+<style>
+  .animated-element {
+    transition: all 0.3s ease;
+  }
+  
+  .animated-element:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease;
+  }
+</style>`,
+    useCase: '버튼 호버 효과, 페이지 전환, 모달 등장, 리스트 아이템 애니메이션 등에 사용'
+  },
+  {
+    id: 'microinteraction',
+    name: '마이크로인터랙션',
+    englishName: 'Microinteraction',
+    description: '작고 세밀한 상호작용 피드백',
+    category: 'feedback',
+    difficulty: 'intermediate',
+    tags: ['인터랙션', '피드백', '애니메이션'],
+    icon: '💫',
+    explanation: '마이크로인터랙션은 버튼 클릭, 좋아요, 스위치 토글 등 작은 동작에 즉각적인 시각적 피드백을 제공합니다.',
+    codeExample: `<button class="like-button">
+  <span class="heart">♡</span>
+</button>
+
+<style>
+  .like-button.active .heart {
+    animation: heartbeat 0.3s ease;
+    color: red;
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.3); }
+    50% { transform: scale(1.1); }
+  }
+  
+  .ripple {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ripple::after {
+    content: '';
+    position: absolute;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    animation: ripple-effect 0.6s;
+  }
+</style>`,
+    useCase: '좋아요 버튼, 체크박스 체크, 스위치 토글, 버튼 클릭 효과 등에 사용'
+  },
+  {
+    id: 'responsive-layout',
+    name: '반응형 레이아웃',
+    englishName: 'Responsive Layout',
+    description: '화면 크기에 따라 자동으로 조정되는 레이아웃',
+    category: 'layout',
+    difficulty: 'intermediate',
+    tags: ['반응형', '적응형', '모바일'],
+    icon: '📱',
+    explanation: '반응형 레이아웃은 다양한 화면 크기(데스크톱, 태블릿, 모바일)에 맞춰 자동으로 UI가 재배치되고 크기가 조정됩니다.',
+    codeExample: `<div class="responsive-container">
+  <div class="responsive-grid">
+    <div class="item">항목 1</div>
+    <div class="item">항목 2</div>
+    <div class="item">항목 3</div>
+  </div>
+</div>
+
+<style>
+  .responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .responsive-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .responsive-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>`,
+    useCase: '웹사이트 전체 레이아웃, 카드 그리드, 네비게이션 메뉴 등에 사용'
+  },
+  {
+    id: 'gesture-ui',
+    name: '제스처 UI',
+    englishName: 'Gesture UI',
+    description: '스와이프, 핀치 등 터치 제스처로 제어하는 인터페이스',
+    category: 'navigation',
+    difficulty: 'advanced',
+    tags: ['제스처', '터치', '모바일'],
+    icon: '👆',
+    explanation: '제스처 UI는 스와이프, 핀치, 롱프레스 등의 터치 제스처를 활용하여 직관적인 모바일 인터랙션을 제공합니다.',
+    codeExample: `<div class="swipeable-card">
+  <div class="card-content">
+    스와이프 가능한 카드
+  </div>
+</div>
+
+<script>
+  let startX = 0;
+  const card = document.querySelector('.swipeable-card');
+  
+  card.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+  
+  card.addEventListener('touchmove', (e) => {
+    const currentX = e.touches[0].clientX;
+    const diff = currentX - startX;
+    card.style.transform = \`translateX(\${diff}px)\`;
+  });
+  
+  card.addEventListener('touchend', (e) => {
+    const threshold = 100;
+    const diff = e.changedTouches[0].clientX - startX;
+    
+    if (Math.abs(diff) > threshold) {
+      // 스와이프 액션 실행
+      handleSwipe(diff > 0 ? 'right' : 'left');
+    } else {
+      // 원위치
+      card.style.transform = 'translateX(0)';
+    }
+  });
+</script>`,
+    useCase: '카드 스와이프 삭제, 이미지 갤러리, 탭 전환, 핀치 줌 등에 사용'
+  },
+  {
     id: 'divider',
     name: '구분선',
     englishName: 'Divider',
